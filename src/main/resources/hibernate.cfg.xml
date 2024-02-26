@@ -10,5 +10,6 @@
         <property name="connection.password"></property>
         <property name="show_sql">true</property>
         <mapping class="br.com.joaogabriel.atividade.entities.Livro" />
+        <mapping class="br.com.joaogabriel.atividade.entities.Editora" />
     </session-factory>
 </hibernate-configuration>
