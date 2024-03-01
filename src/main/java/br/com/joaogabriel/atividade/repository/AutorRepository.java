@@ -1,7 +1,6 @@
 package br.com.joaogabriel.atividade.repository;
+
 import br.com.joaogabriel.atividade.model.Autor;
-import br.com.joaogabriel.atividade.model.Editora;
-import br.com.joaogabriel.atividade.model.Livro;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
