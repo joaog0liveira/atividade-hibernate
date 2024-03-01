@@ -1,11 +1,10 @@
-package br.com.joaogabriel.atividade.entities;
+package br.com.joaogabriel.atividade.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +17,16 @@ public class Livro implements Serializable {
     private String titulo;
     private int anoPub;
     private String isbn;
+
+    @ManyToOne
+    @JoinColumn(name = "editora_id")
+    private Editora editora;
+
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
+
+
 
     public Livro() {
     }
@@ -62,16 +71,19 @@ public class Livro implements Serializable {
         this.isbn = isbn;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Livro livro = (Livro) o;
-        return id == livro.id && anoPub == livro.anoPub && Objects.equals(titulo, livro.titulo) && Objects.equals(isbn, livro.isbn);
+    public Editora getEditora() {
+        return editora;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, titulo, anoPub, isbn);
+    public void setEditora(Editora editora) {
+        this.editora = editora;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 }
