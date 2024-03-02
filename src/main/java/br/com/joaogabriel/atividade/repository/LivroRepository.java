@@ -17,14 +17,7 @@ public class LivroRepository {
     public void salvarLivro(Livro livro) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
-
-            if (livro.getId() != 0) {
-                session.update(livro);
-            } else {
-                // Se a entidade não tem uma chave primária, use session.save() para inserir
-                session.save(livro);
-            }
-
+            session.save(livro);
             transaction.commit();
         }
     }
@@ -60,8 +53,6 @@ public class LivroRepository {
         }
     }
 
-
-
     public List<String> buscarAutoresPorLivro(int livroId) {
         try (Session session = sessionFactory.openSession()) {
             String jpql = "SELECT DISTINCT a.nome FROM Livro l JOIN l.autor a WHERE l.id = :livroId";
@@ -71,7 +62,6 @@ public class LivroRepository {
         }
     }
 
-
     public List<Livro> quaisLivrosPorAutor(int autorId) {
         try (Session session = sessionFactory.openSession()) {
             String jpql = "SELECT DISTINCT a.nome FROM Livro l JOIN l.autor a WHERE a.id = :autorId";
@@ -80,7 +70,6 @@ public class LivroRepository {
                     .getResultList();
         }
     }
-
 
     public List<String> quaisEditorasPorLivro(int livroId) {
         try (Session session = sessionFactory.openSession()) {
@@ -99,5 +88,4 @@ public class LivroRepository {
                     .getResultList();
         }
     }
-
 }

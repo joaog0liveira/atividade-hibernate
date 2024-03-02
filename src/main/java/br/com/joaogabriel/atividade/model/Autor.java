@@ -17,7 +17,6 @@ public class Autor implements Serializable {
     @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
 
-
     @ManyToMany
     @JoinTable(
             name = "autor_editora",
@@ -25,7 +24,6 @@ public class Autor implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "editora_id")
     )
     private List<Editora> editoras;
-
 
     public Autor() {
     }

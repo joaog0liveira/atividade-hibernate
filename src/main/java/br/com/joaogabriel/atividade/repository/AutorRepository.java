@@ -60,7 +60,4 @@ public class AutorRepository {
                     .getResultList();
         }
     }
-
-
-
 }

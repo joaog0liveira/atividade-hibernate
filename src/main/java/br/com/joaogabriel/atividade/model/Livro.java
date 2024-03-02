@@ -23,8 +23,6 @@ public class Livro implements Serializable {
     @JoinColumn(name = "autor_id")
     private Autor autor;
 
-
-
     public Livro() {
     }
 
@@ -35,14 +33,9 @@ public class Livro implements Serializable {
         this.isbn = isbn;
     }
 
-
     public int getId() {
         return id != null ? id.intValue() : 0;
     }
-
-   /* public void setId(Integer id) {
-        this.id = id;
-    }*/
 
     public String getTitulo() {
         return titulo;
