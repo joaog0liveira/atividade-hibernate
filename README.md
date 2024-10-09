@@ -33,6 +33,9 @@ como autores por livro e livros por autor.
 
 3. **Compilação e Execução:**
 
+   ```bash
+   mvn spring-boot:run
+   ```
 
 ## Testes
 Os testes podem ser realizados diretamente através do console, já que o projeto não possui uma API REST implementada. 

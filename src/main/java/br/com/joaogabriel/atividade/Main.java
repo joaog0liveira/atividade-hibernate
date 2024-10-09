@@ -80,8 +80,8 @@ public class Main {
         livroRepository.atualizarLivro(livroSalvo);
         System.out.println("Livro atualizado: " + livroSalvo.getTitulo());
 
-        livroRepository.excluirLivro(livroSalvo.getId());
-        System.out.println("Livro excluído.");
+//        livroRepository.excluirLivro(livroSalvo.getId());
+//        System.out.println("Livro excluído.");
 
     }
 
@@ -101,8 +101,8 @@ public class Main {
         editoraRepository.atualizarEditora(editoraSalva);
         System.out.println("Editora atualizada: " + editoraSalva.getNome());
 
-        editoraRepository.excluirEditora(editoraSalva.getId());
-        System.out.println("Editora excluída.");
+//        editoraRepository.excluirEditora(editoraSalva.getId());
+//        System.out.println("Editora excluída.");
 
     }
 
@@ -123,8 +123,8 @@ public class Main {
         autorRepository.atualizarAutor(autorSalvo);
         System.out.println("Autor(a) atualizado: " + autorSalvo.getNome());
 
-        autorRepository.excluirAutor(autorSalvo.getId());
-        System.out.println("Autor(a) excluído.");
+//        autorRepository.excluirAutor(autorSalvo.getId());
+//        System.out.println("Autor(a) excluído.");
 
     }
 }
